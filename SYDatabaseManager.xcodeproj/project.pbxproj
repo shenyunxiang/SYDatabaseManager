@@ -15,6 +15,10 @@
 		0924B8AA1DF2ABD600B192E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0924B8A81DF2ABD600B192E2 /* LaunchScreen.storyboard */; };
 		0924B8B51DF2ABD600B192E2 /* SYDatabaseManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0924B8B41DF2ABD600B192E2 /* SYDatabaseManagerTests.m */; };
 		0924B8C01DF2ABD600B192E2 /* SYDatabaseManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0924B8BF1DF2ABD600B192E2 /* SYDatabaseManagerUITests.m */; };
+		0924B8D01DF2C3EC00B192E2 /* SYSqlBaseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0924B8CF1DF2C3EC00B192E2 /* SYSqlBaseAPI.m */; };
+		165BDE77C6E984218DFBDDBD /* libPods-SYDatabaseManagerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0598AFA789878C987233672D /* libPods-SYDatabaseManagerUITests.a */; };
+		BF0B886571F9D47FD025EB81 /* libPods-SYDatabaseManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BD4E4711B80E8A647D408D /* libPods-SYDatabaseManager.a */; };
+		DCA5161E1600A79A2BEC16FF /* libPods-SYDatabaseManagerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB00EC94F80D225A285AE49 /* libPods-SYDatabaseManagerTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0598AFA789878C987233672D /* libPods-SYDatabaseManagerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SYDatabaseManagerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0924B8971DF2ABD600B192E2 /* SYDatabaseManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYDatabaseManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0924B89B1DF2ABD600B192E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0924B89D1DF2ABD600B192E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +56,16 @@
 		0924B8BB1DF2ABD600B192E2 /* SYDatabaseManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SYDatabaseManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0924B8BF1DF2ABD600B192E2 /* SYDatabaseManagerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYDatabaseManagerUITests.m; sourceTree = "<group>"; };
 		0924B8C11DF2ABD600B192E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0924B8CE1DF2C3EC00B192E2 /* SYSqlBaseAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSqlBaseAPI.h; sourceTree = "<group>"; };
+		0924B8CF1DF2C3EC00B192E2 /* SYSqlBaseAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSqlBaseAPI.m; sourceTree = "<group>"; };
+		0CB00EC94F80D225A285AE49 /* libPods-SYDatabaseManagerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SYDatabaseManagerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FB62C9DF501FBCACE0F39AD /* Pods-SYDatabaseManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYDatabaseManagerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SYDatabaseManagerTests/Pods-SYDatabaseManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		23F7A87398B5CF115E214723 /* Pods-SYDatabaseManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYDatabaseManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-SYDatabaseManager/Pods-SYDatabaseManager.release.xcconfig"; sourceTree = "<group>"; };
+		53D9218CF2DFC1279973A4A5 /* Pods-SYDatabaseManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYDatabaseManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SYDatabaseManager/Pods-SYDatabaseManager.debug.xcconfig"; sourceTree = "<group>"; };
+		6BABA840547A3F8ED8F8BF61 /* Pods-SYDatabaseManagerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYDatabaseManagerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SYDatabaseManagerUITests/Pods-SYDatabaseManagerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D5BD4E4711B80E8A647D408D /* libPods-SYDatabaseManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SYDatabaseManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2DB7CC68425ACCA277934FB /* Pods-SYDatabaseManagerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYDatabaseManagerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SYDatabaseManagerUITests/Pods-SYDatabaseManagerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F7731E9B3366880FF7AA84F2 /* Pods-SYDatabaseManagerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYDatabaseManagerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SYDatabaseManagerTests/Pods-SYDatabaseManagerTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF0B886571F9D47FD025EB81 /* libPods-SYDatabaseManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCA5161E1600A79A2BEC16FF /* libPods-SYDatabaseManagerTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				165BDE77C6E984218DFBDDBD /* libPods-SYDatabaseManagerUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +103,8 @@
 				0924B8B31DF2ABD600B192E2 /* SYDatabaseManagerTests */,
 				0924B8BE1DF2ABD600B192E2 /* SYDatabaseManagerUITests */,
 				0924B8981DF2ABD600B192E2 /* Products */,
+				FDB738461A31790FD2B6106E /* Pods */,
+				82944CA39B5E53D18C60D2C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +121,7 @@
 		0924B8991DF2ABD600B192E2 /* SYDatabaseManager */ = {
 			isa = PBXGroup;
 			children = (
+				0924B8CD1DF2AD5A00B192E2 /* DatabaseManager */,
 				0924B89D1DF2ABD600B192E2 /* AppDelegate.h */,
 				0924B89E1DF2ABD600B192E2 /* AppDelegate.m */,
 				0924B8A01DF2ABD600B192E2 /* ViewController.h */,
@@ -140,6 +161,38 @@
 			path = SYDatabaseManagerUITests;
 			sourceTree = "<group>";
 		};
+		0924B8CD1DF2AD5A00B192E2 /* DatabaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				0924B8CE1DF2C3EC00B192E2 /* SYSqlBaseAPI.h */,
+				0924B8CF1DF2C3EC00B192E2 /* SYSqlBaseAPI.m */,
+			);
+			path = DatabaseManager;
+			sourceTree = "<group>";
+		};
+		82944CA39B5E53D18C60D2C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5BD4E4711B80E8A647D408D /* libPods-SYDatabaseManager.a */,
+				0CB00EC94F80D225A285AE49 /* libPods-SYDatabaseManagerTests.a */,
+				0598AFA789878C987233672D /* libPods-SYDatabaseManagerUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FDB738461A31790FD2B6106E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				53D9218CF2DFC1279973A4A5 /* Pods-SYDatabaseManager.debug.xcconfig */,
+				23F7A87398B5CF115E214723 /* Pods-SYDatabaseManager.release.xcconfig */,
+				0FB62C9DF501FBCACE0F39AD /* Pods-SYDatabaseManagerTests.debug.xcconfig */,
+				F7731E9B3366880FF7AA84F2 /* Pods-SYDatabaseManagerTests.release.xcconfig */,
+				F2DB7CC68425ACCA277934FB /* Pods-SYDatabaseManagerUITests.debug.xcconfig */,
+				6BABA840547A3F8ED8F8BF61 /* Pods-SYDatabaseManagerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +200,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0924B8C41DF2ABD600B192E2 /* Build configuration list for PBXNativeTarget "SYDatabaseManager" */;
 			buildPhases = (
+				FEE9D243D77DAE7891878D43 /* [CP] Check Pods Manifest.lock */,
 				0924B8931DF2ABD600B192E2 /* Sources */,
 				0924B8941DF2ABD600B192E2 /* Frameworks */,
 				0924B8951DF2ABD600B192E2 /* Resources */,
+				0261F83D34BF68B2E480E808 /* [CP] Embed Pods Frameworks */,
+				BC88005B29631DA06DD644D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +220,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0924B8C71DF2ABD600B192E2 /* Build configuration list for PBXNativeTarget "SYDatabaseManagerTests" */;
 			buildPhases = (
+				6ADC5B6C500C67EA38DACEAE /* [CP] Check Pods Manifest.lock */,
 				0924B8AC1DF2ABD600B192E2 /* Sources */,
 				0924B8AD1DF2ABD600B192E2 /* Frameworks */,
 				0924B8AE1DF2ABD600B192E2 /* Resources */,
+				934B970ACACFF4B5B7122097 /* [CP] Embed Pods Frameworks */,
+				FF2B3F3E34B09FCE3929B990 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,9 +241,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0924B8CA1DF2ABD600B192E2 /* Build configuration list for PBXNativeTarget "SYDatabaseManagerUITests" */;
 			buildPhases = (
+				F4C8B359D08D7A47C8E332BF /* [CP] Check Pods Manifest.lock */,
 				0924B8B71DF2ABD600B192E2 /* Sources */,
 				0924B8B81DF2ABD600B192E2 /* Frameworks */,
 				0924B8B91DF2ABD600B192E2 /* Resources */,
+				91CF99DC658B8A97F7ACB81F /* [CP] Embed Pods Frameworks */,
+				A7159F40ABDB960A4ADF202D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,6 +330,144 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0261F83D34BF68B2E480E808 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SYDatabaseManager/Pods-SYDatabaseManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6ADC5B6C500C67EA38DACEAE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		91CF99DC658B8A97F7ACB81F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SYDatabaseManagerUITests/Pods-SYDatabaseManagerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		934B970ACACFF4B5B7122097 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SYDatabaseManagerTests/Pods-SYDatabaseManagerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7159F40ABDB960A4ADF202D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SYDatabaseManagerUITests/Pods-SYDatabaseManagerUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC88005B29631DA06DD644D4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SYDatabaseManager/Pods-SYDatabaseManager-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4C8B359D08D7A47C8E332BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FEE9D243D77DAE7891878D43 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FF2B3F3E34B09FCE3929B990 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SYDatabaseManagerTests/Pods-SYDatabaseManagerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0924B8931DF2ABD600B192E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -275,6 +475,7 @@
 			files = (
 				0924B8A21DF2ABD600B192E2 /* ViewController.m in Sources */,
 				0924B89F1DF2ABD600B192E2 /* AppDelegate.m in Sources */,
+				0924B8D01DF2C3EC00B192E2 /* SYSqlBaseAPI.m in Sources */,
 				0924B89C1DF2ABD600B192E2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,10 +621,12 @@
 		};
 		0924B8C51DF2ABD600B192E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53D9218CF2DFC1279973A4A5 /* Pods-SYDatabaseManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SYDatabaseManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = shenyunxiang.SYDatabaseManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -432,10 +635,12 @@
 		};
 		0924B8C61DF2ABD600B192E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23F7A87398B5CF115E214723 /* Pods-SYDatabaseManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SYDatabaseManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = shenyunxiang.SYDatabaseManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -444,6 +649,7 @@
 		};
 		0924B8C81DF2ABD600B192E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FB62C9DF501FBCACE0F39AD /* Pods-SYDatabaseManagerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SYDatabaseManagerTests/Info.plist;
@@ -456,6 +662,7 @@
 		};
 		0924B8C91DF2ABD600B192E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7731E9B3366880FF7AA84F2 /* Pods-SYDatabaseManagerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SYDatabaseManagerTests/Info.plist;
@@ -468,6 +675,7 @@
 		};
 		0924B8CB1DF2ABD600B192E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2DB7CC68425ACCA277934FB /* Pods-SYDatabaseManagerUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = SYDatabaseManagerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -479,6 +687,7 @@
 		};
 		0924B8CC1DF2ABD600B192E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BABA840547A3F8ED8F8BF61 /* Pods-SYDatabaseManagerUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = SYDatabaseManagerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -507,6 +716,7 @@
 				0924B8C61DF2ABD600B192E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0924B8C71DF2ABD600B192E2 /* Build configuration list for PBXNativeTarget "SYDatabaseManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +725,7 @@
 				0924B8C91DF2ABD600B192E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0924B8CA1DF2ABD600B192E2 /* Build configuration list for PBXNativeTarget "SYDatabaseManagerUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +734,7 @@
 				0924B8CC1DF2ABD600B192E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

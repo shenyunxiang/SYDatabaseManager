@@ -57,7 +57,7 @@ typedef NS_ENUM(NSInteger,SY_DB_ActionType) {
 - (void)queryIntransationWith:(NSArray *)sqlStrArr Completion:(void(^)(NSArray *rsArr, BOOL *rollback))block;
 
 /**
- 使用线程,使用事务处理 修改,插入,删除操作
+ 使用线程,使用事务处理 修改,插入,删除操作(如果有一个出错,会中断)
 
  @param sqlArr SQL语句的数组
  @param block (所有操作是否成功，*rollback:是否回滚)

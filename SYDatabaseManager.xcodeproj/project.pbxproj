@@ -16,6 +16,7 @@
 		0924B8B51DF2ABD600B192E2 /* SYDatabaseManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0924B8B41DF2ABD600B192E2 /* SYDatabaseManagerTests.m */; };
 		0924B8C01DF2ABD600B192E2 /* SYDatabaseManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0924B8BF1DF2ABD600B192E2 /* SYDatabaseManagerUITests.m */; };
 		0924B8D01DF2C3EC00B192E2 /* SYSqlBaseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0924B8CF1DF2C3EC00B192E2 /* SYSqlBaseAPI.m */; };
+		0924B8D31DF30F8B00B192E2 /* SYDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0924B8D21DF30F8B00B192E2 /* SYDatabaseManager.m */; };
 		165BDE77C6E984218DFBDDBD /* libPods-SYDatabaseManagerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0598AFA789878C987233672D /* libPods-SYDatabaseManagerUITests.a */; };
 		BF0B886571F9D47FD025EB81 /* libPods-SYDatabaseManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BD4E4711B80E8A647D408D /* libPods-SYDatabaseManager.a */; };
 		DCA5161E1600A79A2BEC16FF /* libPods-SYDatabaseManagerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB00EC94F80D225A285AE49 /* libPods-SYDatabaseManagerTests.a */; };
@@ -58,6 +59,8 @@
 		0924B8C11DF2ABD600B192E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0924B8CE1DF2C3EC00B192E2 /* SYSqlBaseAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSqlBaseAPI.h; sourceTree = "<group>"; };
 		0924B8CF1DF2C3EC00B192E2 /* SYSqlBaseAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSqlBaseAPI.m; sourceTree = "<group>"; };
+		0924B8D11DF30F8B00B192E2 /* SYDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYDatabaseManager.h; sourceTree = "<group>"; };
+		0924B8D21DF30F8B00B192E2 /* SYDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYDatabaseManager.m; sourceTree = "<group>"; };
 		0CB00EC94F80D225A285AE49 /* libPods-SYDatabaseManagerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SYDatabaseManagerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FB62C9DF501FBCACE0F39AD /* Pods-SYDatabaseManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYDatabaseManagerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SYDatabaseManagerTests/Pods-SYDatabaseManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		23F7A87398B5CF115E214723 /* Pods-SYDatabaseManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYDatabaseManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-SYDatabaseManager/Pods-SYDatabaseManager.release.xcconfig"; sourceTree = "<group>"; };
@@ -166,6 +169,8 @@
 			children = (
 				0924B8CE1DF2C3EC00B192E2 /* SYSqlBaseAPI.h */,
 				0924B8CF1DF2C3EC00B192E2 /* SYSqlBaseAPI.m */,
+				0924B8D11DF30F8B00B192E2 /* SYDatabaseManager.h */,
+				0924B8D21DF30F8B00B192E2 /* SYDatabaseManager.m */,
 			);
 			path = DatabaseManager;
 			sourceTree = "<group>";
@@ -477,6 +482,7 @@
 				0924B89F1DF2ABD600B192E2 /* AppDelegate.m in Sources */,
 				0924B8D01DF2C3EC00B192E2 /* SYSqlBaseAPI.m in Sources */,
 				0924B89C1DF2ABD600B192E2 /* main.m in Sources */,
+				0924B8D31DF30F8B00B192E2 /* SYDatabaseManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

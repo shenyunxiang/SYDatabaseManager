@@ -8,8 +8,6 @@
 
 #import "SYSqlBaseAPI.h"
 
-typedef void(^completionBlock)(BOOL bRet, FMResultSet *rs, NSString *msg);
-
 @interface SYSqlBaseAPI ()
 //数据库的全路径
 @property(nonatomic, copy) NSString     *dbPath;
@@ -86,7 +84,13 @@ static SYSqlBaseAPI *shareInstance = nil;
     }];
 }
 
-- (void)queryIntransationWith:(NSArray *)sqlStrArr Completion:(void(^)(NSArray *rsArr, NSString *msg))block{
+- (void)executeTransactionWithBlock:(void(^)(FMDatabase *db, BOOL *rollback))block{
+    [_dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
+        block(db, rollback);
+    }];
+}
+
+- (void)queryIntransationWith:(NSArray *)sqlStrArr Completion:(void(^)(NSArray *rsArr, BOOL *rollback))block{
     
     [self executeTransactionWithBlock:^(FMDatabase *db, BOOL *rollback) {
         
@@ -97,23 +101,43 @@ static SYSqlBaseAPI *shareInstance = nil;
             FMResultSet *rs = [db executeQuery:sqlStr];
             if ([db hadError]) {
                 msg = [db lastErrorMessage];
-                NSLog(@"executeSql Err %d: %@", [db lastErrorCode], [db lastErrorMessage]);
+                NSLog(@"executeSql Err %d: %@", [db lastErrorCode], msg);
                 break;
             }
+            [rs close];
             [mArr addObject:rs];
         }
-        block(mArr, msg);
+        
+        block(mArr, rollback);
         
     }];
     
     
 }
 
-- (void)executeTransactionWithBlock:(void(^)(FMDatabase *db, BOOL *rollback))block{
-    [_dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
-        block(db, rollback);
+- (void)executeUpdataTransactionWith:(NSArray *)sqlArr Completion:(void(^)(BOOL success, BOOL *rollback))block{
+    
+    [self executeTransactionWithBlock:^(FMDatabase *db, BOOL *rollback) {
+        
+        BOOL success = NO;
+        for (NSString *sqlStr in sqlArr) {
+            success = [db executeUpdate:sqlStr];
+            if (!success) {
+                break;
+            }
+        }
+        
+        if ([db hadError]) {
+            NSLog(@"executeSql Err %d: %@", [db lastErrorCode], [db lastErrorMessage]);
+        }
+        
+        block(success, rollback);
+        
     }];
+    
 }
+
+
 
 
 

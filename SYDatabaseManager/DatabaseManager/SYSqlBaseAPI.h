@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <FMDB.h>
 
+typedef void(^completionBlock)(BOOL bRet, FMResultSet *rs, NSString *msg);
+
 typedef NS_ENUM(NSInteger,SY_DB_ActionType) {
     SY_DB_SELECT = 0,//查询操作
     SY_DB_INSERT,	 //插入操作
@@ -18,5 +20,48 @@ typedef NS_ENUM(NSInteger,SY_DB_ActionType) {
 };
 
 @interface SYSqlBaseAPI : NSObject
+
+
++ (SYSqlBaseAPI *)shareInstance;
+
+/**
+ 创建数据库
+
+ @param databasePath 数据库全路径
+ @return YES/NO
+ */
+- (BOOL)createDatabaseAtPath:(NSString *)databasePath;
+
+/**
+ 使用线程 执行单个sql语句 不需要使用事务处理 根据类型确定是否返回记录集
+
+ @param sqlStr sql语句
+ @param actionType 操作类型
+ @param block 返回操作状态， FMResultSet， msg:错误信息
+ */
+- (void)excuteSQL:(NSString *)sqlStr ActionType:(SY_DB_ActionType)actionType Completion:(completionBlock)block;
+
+/**
+ 使用线程,使用事务处理
+
+ @param block  (FMDatabase,rollback)
+ */
+- (void)executeTransactionWithBlock:(void(^)(FMDatabase *db, BOOL *rollback))block;
+
+/**
+ 使用线程,使用事务处理 查询语句(如果有一个出错,会中断查询)
+
+ @param sqlStrArr 数组必须为全为查询语句
+ @param block  (FMResultSet数组, *rollback:是否回滚)
+ */
+- (void)queryIntransationWith:(NSArray *)sqlStrArr Completion:(void(^)(NSArray *rsArr, BOOL *rollback))block;
+
+/**
+ 使用线程,使用事务处理 修改,插入,删除操作
+
+ @param sqlArr SQL语句的数组
+ @param block (所有操作是否成功，*rollback:是否回滚)
+ */
+- (void)executeUpdataTransactionWith:(NSArray *)sqlArr Completion:(void(^)(BOOL success, BOOL *rollback))block;
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-
+#import "SYDatabaseManager.h"
+#import <FMDB.h>
 @interface ViewController ()
 
 @end
@@ -17,6 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSDictionary *dic = @{@"name":@"s", @"sda": @"d"};
+    SYDatabaseManager *mana = [[SYDatabaseManager alloc] init];
+    [mana insertToTable:@"f" Data:dic];
+    
+
+    
 }
 
 

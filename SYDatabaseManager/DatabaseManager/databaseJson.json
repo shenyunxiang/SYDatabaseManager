@@ -1,0 +1,9 @@
+{   
+    "SmartDeviceTab": {
+                       "deviceType":"text",
+                       "deviceMac":"text:PRIMARY KEY(deviceType,deviceMac)",
+                       "deviceName":"text",
+                       "test":"text"
+    }
+    
+}

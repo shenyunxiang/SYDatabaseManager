@@ -10,4 +10,7 @@
 
 @interface SYDatabaseManager : NSObject
 
+
+- (void)insertToTable:(NSString *)tableName Data:(NSDictionary *)dic;
+
 @end

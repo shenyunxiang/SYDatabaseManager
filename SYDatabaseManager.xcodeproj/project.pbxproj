@@ -17,6 +17,9 @@
 		0924B8C01DF2ABD600B192E2 /* SYDatabaseManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0924B8BF1DF2ABD600B192E2 /* SYDatabaseManagerUITests.m */; };
 		0924B8D01DF2C3EC00B192E2 /* SYSqlBaseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0924B8CF1DF2C3EC00B192E2 /* SYSqlBaseAPI.m */; };
 		0924B8D31DF30F8B00B192E2 /* SYDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0924B8D21DF30F8B00B192E2 /* SYDatabaseManager.m */; };
+		09C34CE51E557681009C4A66 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C34CE41E557681009C4A66 /* libsqlite3.0.tbd */; };
+		09C34CE81E56C27F009C4A66 /* SYSqlBaseAPITest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C34CE71E56C27F009C4A66 /* SYSqlBaseAPITest.m */; };
+		09C34CEB1E56D232009C4A66 /* databaseJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 09C34CEA1E56D232009C4A66 /* databaseJson.json */; };
 		165BDE77C6E984218DFBDDBD /* libPods-SYDatabaseManagerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0598AFA789878C987233672D /* libPods-SYDatabaseManagerUITests.a */; };
 		BF0B886571F9D47FD025EB81 /* libPods-SYDatabaseManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BD4E4711B80E8A647D408D /* libPods-SYDatabaseManager.a */; };
 		DCA5161E1600A79A2BEC16FF /* libPods-SYDatabaseManagerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB00EC94F80D225A285AE49 /* libPods-SYDatabaseManagerTests.a */; };
@@ -61,6 +64,9 @@
 		0924B8CF1DF2C3EC00B192E2 /* SYSqlBaseAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSqlBaseAPI.m; sourceTree = "<group>"; };
 		0924B8D11DF30F8B00B192E2 /* SYDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYDatabaseManager.h; sourceTree = "<group>"; };
 		0924B8D21DF30F8B00B192E2 /* SYDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYDatabaseManager.m; sourceTree = "<group>"; };
+		09C34CE41E557681009C4A66 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		09C34CE71E56C27F009C4A66 /* SYSqlBaseAPITest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSqlBaseAPITest.m; sourceTree = "<group>"; };
+		09C34CEA1E56D232009C4A66 /* databaseJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = databaseJson.json; sourceTree = "<group>"; };
 		0CB00EC94F80D225A285AE49 /* libPods-SYDatabaseManagerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SYDatabaseManagerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FB62C9DF501FBCACE0F39AD /* Pods-SYDatabaseManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYDatabaseManagerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SYDatabaseManagerTests/Pods-SYDatabaseManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		23F7A87398B5CF115E214723 /* Pods-SYDatabaseManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYDatabaseManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-SYDatabaseManager/Pods-SYDatabaseManager.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09C34CE51E557681009C4A66 /* libsqlite3.0.tbd in Frameworks */,
 				BF0B886571F9D47FD025EB81 /* libPods-SYDatabaseManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				0924B8B41DF2ABD600B192E2 /* SYDatabaseManagerTests.m */,
+				09C34CE71E56C27F009C4A66 /* SYSqlBaseAPITest.m */,
 				0924B8B61DF2ABD600B192E2 /* Info.plist */,
 			);
 			path = SYDatabaseManagerTests;
@@ -167,6 +175,7 @@
 		0924B8CD1DF2AD5A00B192E2 /* DatabaseManager */ = {
 			isa = PBXGroup;
 			children = (
+				09C34CEA1E56D232009C4A66 /* databaseJson.json */,
 				0924B8CE1DF2C3EC00B192E2 /* SYSqlBaseAPI.h */,
 				0924B8CF1DF2C3EC00B192E2 /* SYSqlBaseAPI.m */,
 				0924B8D11DF30F8B00B192E2 /* SYDatabaseManager.h */,
@@ -178,6 +187,7 @@
 		82944CA39B5E53D18C60D2C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09C34CE41E557681009C4A66 /* libsqlite3.0.tbd */,
 				D5BD4E4711B80E8A647D408D /* libPods-SYDatabaseManager.a */,
 				0CB00EC94F80D225A285AE49 /* libPods-SYDatabaseManagerTests.a */,
 				0598AFA789878C987233672D /* libPods-SYDatabaseManagerUITests.a */,
@@ -316,6 +326,7 @@
 				0924B8AA1DF2ABD600B192E2 /* LaunchScreen.storyboard in Resources */,
 				0924B8A71DF2ABD600B192E2 /* Assets.xcassets in Resources */,
 				0924B8A51DF2ABD600B192E2 /* Main.storyboard in Resources */,
+				09C34CEB1E56D232009C4A66 /* databaseJson.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +501,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09C34CE81E56C27F009C4A66 /* SYSqlBaseAPITest.m in Sources */,
 				0924B8B51DF2ABD600B192E2 /* SYDatabaseManagerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

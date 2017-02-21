@@ -20,6 +20,9 @@
 		09C34CE51E557681009C4A66 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C34CE41E557681009C4A66 /* libsqlite3.0.tbd */; };
 		09C34CE81E56C27F009C4A66 /* SYSqlBaseAPITest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C34CE71E56C27F009C4A66 /* SYSqlBaseAPITest.m */; };
 		09C34CEB1E56D232009C4A66 /* databaseJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 09C34CEA1E56D232009C4A66 /* databaseJson.json */; };
+		09C34CF11E5B084F009C4A66 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C34CEE1E5B084F009C4A66 /* NSObject+YYModel.m */; };
+		09C34CF21E5B084F009C4A66 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C34CF01E5B084F009C4A66 /* YYClassInfo.m */; };
+		09C34CF61E5B0AA5009C4A66 /* SmartDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C34CF51E5B0AA5009C4A66 /* SmartDeviceModel.m */; };
 		165BDE77C6E984218DFBDDBD /* libPods-SYDatabaseManagerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0598AFA789878C987233672D /* libPods-SYDatabaseManagerUITests.a */; };
 		BF0B886571F9D47FD025EB81 /* libPods-SYDatabaseManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BD4E4711B80E8A647D408D /* libPods-SYDatabaseManager.a */; };
 		DCA5161E1600A79A2BEC16FF /* libPods-SYDatabaseManagerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB00EC94F80D225A285AE49 /* libPods-SYDatabaseManagerTests.a */; };
@@ -67,6 +70,12 @@
 		09C34CE41E557681009C4A66 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		09C34CE71E56C27F009C4A66 /* SYSqlBaseAPITest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSqlBaseAPITest.m; sourceTree = "<group>"; };
 		09C34CEA1E56D232009C4A66 /* databaseJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = databaseJson.json; sourceTree = "<group>"; };
+		09C34CED1E5B084F009C4A66 /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
+		09C34CEE1E5B084F009C4A66 /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
+		09C34CEF1E5B084F009C4A66 /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
+		09C34CF01E5B084F009C4A66 /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
+		09C34CF41E5B0AA5009C4A66 /* SmartDeviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartDeviceModel.h; sourceTree = "<group>"; };
+		09C34CF51E5B0AA5009C4A66 /* SmartDeviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmartDeviceModel.m; sourceTree = "<group>"; };
 		0CB00EC94F80D225A285AE49 /* libPods-SYDatabaseManagerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SYDatabaseManagerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FB62C9DF501FBCACE0F39AD /* Pods-SYDatabaseManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYDatabaseManagerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SYDatabaseManagerTests/Pods-SYDatabaseManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		23F7A87398B5CF115E214723 /* Pods-SYDatabaseManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYDatabaseManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-SYDatabaseManager/Pods-SYDatabaseManager.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +140,8 @@
 		0924B8991DF2ABD600B192E2 /* SYDatabaseManager */ = {
 			isa = PBXGroup;
 			children = (
+				09C34CF31E5B0AA5009C4A66 /* Model */,
+				09C34CEC1E5B07E7009C4A66 /* YYModel */,
 				0924B8CD1DF2AD5A00B192E2 /* DatabaseManager */,
 				0924B89D1DF2ABD600B192E2 /* AppDelegate.h */,
 				0924B89E1DF2ABD600B192E2 /* AppDelegate.m */,
@@ -182,6 +193,26 @@
 				0924B8D21DF30F8B00B192E2 /* SYDatabaseManager.m */,
 			);
 			path = DatabaseManager;
+			sourceTree = "<group>";
+		};
+		09C34CEC1E5B07E7009C4A66 /* YYModel */ = {
+			isa = PBXGroup;
+			children = (
+				09C34CED1E5B084F009C4A66 /* NSObject+YYModel.h */,
+				09C34CEE1E5B084F009C4A66 /* NSObject+YYModel.m */,
+				09C34CEF1E5B084F009C4A66 /* YYClassInfo.h */,
+				09C34CF01E5B084F009C4A66 /* YYClassInfo.m */,
+			);
+			path = YYModel;
+			sourceTree = "<group>";
+		};
+		09C34CF31E5B0AA5009C4A66 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				09C34CF41E5B0AA5009C4A66 /* SmartDeviceModel.h */,
+				09C34CF51E5B0AA5009C4A66 /* SmartDeviceModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		82944CA39B5E53D18C60D2C8 /* Frameworks */ = {
@@ -492,8 +523,11 @@
 				0924B8A21DF2ABD600B192E2 /* ViewController.m in Sources */,
 				0924B89F1DF2ABD600B192E2 /* AppDelegate.m in Sources */,
 				0924B8D01DF2C3EC00B192E2 /* SYSqlBaseAPI.m in Sources */,
+				09C34CF11E5B084F009C4A66 /* NSObject+YYModel.m in Sources */,
 				0924B89C1DF2ABD600B192E2 /* main.m in Sources */,
+				09C34CF61E5B0AA5009C4A66 /* SmartDeviceModel.m in Sources */,
 				0924B8D31DF30F8B00B192E2 /* SYDatabaseManager.m in Sources */,
+				09C34CF21E5B084F009C4A66 /* YYClassInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

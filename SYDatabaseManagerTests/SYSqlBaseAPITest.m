@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 #import "SYSqlBaseAPI.h"
+#import "NSObject+YYModel.h"
+#import "SmartDeviceModel.h"
 @interface SYSqlBaseAPITest : XCTestCase
 
 @end
@@ -35,7 +37,14 @@
     NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"/test.db"];
     NSLog(@"%@", path);
     [manager createDBWithdbPath:path];
-    [manager createTableWithJsonFile:@"databaseJson.json" UpdateTable:YES];
+//    [manager createTableWithJsonFile:@"databaseJson.json" UpdateTable:YES];
+    
+    
+    SmartDeviceModel *model = [[SmartDeviceModel alloc] init];
+    model.deviceMac = @"ee";
+    
+    
+    [manager insertDataWithDic:@{@"device":@[model]}];
     
     
 }

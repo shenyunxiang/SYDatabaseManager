@@ -42,6 +42,9 @@ typedef NS_ENUM(NSInteger,SY_DB_ActionType) {
  */
 - (void)createTableWithJsonFile:(NSString *)jsonFileName UpdateTable:(BOOL)update;
 
+
+- (BOOL)insertDataWithDic:(NSDictionary *)dic;
+
 /**
  同步 事务 处理
 
@@ -49,6 +52,15 @@ typedef NS_ENUM(NSInteger,SY_DB_ActionType) {
  @return YES/NO
  */
 - (BOOL)executeSQLInTransactionWithSQLArr:(NSArray *)sqlArr;
+
+/**
+ 同步 事务 处理
+
+ @param sqlArr SQL语句(传入的SQL语句不能为查询SQL语句)
+ @param value 需要修改的的值
+ @return YES/NO
+ */
+- (BOOL)executeSQLInTransactionWithSQLArr:(NSArray *)sqlArr Value:(nullable NSArray *)value;
 
 /**
  使用 线程 执行单个sql语句 不需要使用事务处理 根据类型确定是否返回记录集

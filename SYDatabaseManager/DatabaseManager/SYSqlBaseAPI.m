@@ -7,6 +7,9 @@
 //
 
 #import "SYSqlBaseAPI.h"
+#import "YYClassInfo.h"
+#import "NSObject+YYModel.h"
+
 
 @interface SYSqlBaseAPI ()
 {
@@ -64,33 +67,95 @@ static SYSqlBaseAPI *shareInstance = nil;
 
     if (mArr.count > 0) {
         
-        BOOL success = [self executeSQLInTransactionWithSQLArr:mArr];
-        
-        
+        BOOL success = [self executeSQLInTransactionWithSQLArr:mArr Value:nil];
+        //是否要去插入新的字段
         if (update && success && [self.db open]) {
-            
             NSDictionary *addColmunInfo = [self getAddColumnFields:jsonFileName];
             NSArray *SQLArr = [self getAllAddColumnSQL:addColmunInfo];
-            [self executeSQLInTransactionWithSQLArr:SQLArr];
+            [self executeSQLInTransactionWithSQLArr:SQLArr Value:nil];
         }
         
     }
     
 }
 
-- (BOOL)insertDataWithModel:(NSArray *)models {
+//dic --> {表的名字,model}
+- (BOOL)insertDataWithDic:(NSDictionary *)dic {
     
+    NSArray *insertArr = [self getAllInsertSQLInfo:dic];
     
-    
-    
-    
-    return YES;
+    BOOL success = [self executeSQLInTransactionWithSQLArr:insertArr[0] Value:insertArr[1]];
+
+    return success;
 }
 
 
+- (NSArray *)getAllInsertSQLInfo:(NSDictionary *)dic {
+    
+    NSArray *tableNameArr = [dic allKeys];
+    NSMutableArray *sql = [NSMutableArray array];
+    NSMutableArray *values = [NSMutableArray array];
+    for (NSString *tableName in tableNameArr) {
+        NSArray *models = [dic valueForKey:tableName];
+        for (id model in models) {
+            NSArray *insert = [self getInsertSQL:tableName Model:model];
+            [sql addObject:insert[0]];
+            [values addObject:insert[1]];
+        }
+    }
+ 
+    return @[sql, values];
+}
+
+//获取插入的SQL语句 和 插入的值
+- (NSArray *)getInsertSQL:(NSString *)tableName Model:(id)model {
+    
+    NSString *operationSQL = @"INSERT INTO";
+    NSString *fieldsSQL    = @"(";
+    NSString *valuesSQL = @"VALUES(";
+        
+    NSDictionary *dic = [model modelToJSONObject];
+    NSArray *fields       = [dic allKeys];
+    NSArray *filterArr    = [NSArray array];
+    if ([model respondsToSelector:@selector(modelContainerPropertyGenericClass)]) {
+        NSDictionary *genericMapper = [model modelContainerPropertyGenericClass];
+        filterArr = [genericMapper allKeys];
+    }
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"NOT (SELF IN %@)", filterArr];
+    fields = [fields filteredArrayUsingPredicate:predicate];
+    
+    NSMutableArray *valueArr = [NSMutableArray arrayWithCapacity:fields.count];
+    for (NSString *field in fields) {
+        
+        NSInteger value = [[dic valueForKey:field] integerValue];
+        if (value < 0) {
+            continue;
+        }
+        
+        fieldsSQL = [fieldsSQL stringByAppendingFormat:@"%@,",field];
+        valuesSQL = [valuesSQL stringByAppendingFormat:@"?,"];
+        [valueArr addObject:[dic valueForKey:field]];
+    }
+    fieldsSQL = [fieldsSQL substringToIndex:fieldsSQL.length - 1];
+    fieldsSQL = [fieldsSQL stringByAppendingString:@")"];
+    
+    valuesSQL = [valuesSQL substringToIndex:valuesSQL.length - 1];
+    valuesSQL = [valuesSQL stringByAppendingString:@")"];
+    
+    NSString *finalSQL = [NSString stringWithFormat:@"%@ %@ %@ %@", operationSQL,tableName, fieldsSQL, valuesSQL];
+    NSLog(@"%@", finalSQL);
+    return @[finalSQL,valueArr];
+    
+}
+
+
+- (BOOL)executeSQLInTransactionWithSQLArr:(NSArray *)sqlArr {
+    return [self executeSQLInTransactionWithSQLArr:sqlArr Value:nil];
+}
 
 //同步 事务 处理(传入的SQL语句不能为查询SQL语句)
-- (BOOL)executeSQLInTransactionWithSQLArr:(NSArray *)sqlArr {
+- (BOOL)executeSQLInTransactionWithSQLArr:(NSArray *)sqlArr Value:(nullable NSArray *)value{
     
     if (sqlArr.count == 0) {
         return NO;
@@ -99,13 +164,27 @@ static SYSqlBaseAPI *shareInstance = nil;
     BOOL success = NO;
     success = [self transactionWithBlock:^BOOL(FMDatabase *db) {
         BOOL rollBack = NO;
-        for (NSString *sql in sqlArr) {
-            rollBack = [db executeUpdate:sql];
-            if (rollBack == NO) {
-                return YES;
+        
+        if (value) {
+            for (int i = 0; i < sqlArr.count; i++) {
+                NSString *sql = sqlArr[i];
+                NSArray *valueAr = value[i];
+                rollBack = [db executeQuery:sql values:valueAr error:nil];
+                if (rollBack == NO) {
+                    return YES;
+                }
             }
+            return NO;
+        } else {
+            for (NSString *sql in sqlArr) {
+                rollBack = [db executeUpdate:sql];
+                if (rollBack == NO) {
+                    return YES;
+                }
+            }
+            return NO;
         }
-        return NO;
+ 
     }];
     
     return success;

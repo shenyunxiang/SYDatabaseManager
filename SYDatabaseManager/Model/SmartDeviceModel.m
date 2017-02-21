@@ -53,3 +53,10 @@
 
 
 @end
+
+#pragma mark - TelecontrolCode
+@implementation TelecontrolCode
+
+
+
+@end

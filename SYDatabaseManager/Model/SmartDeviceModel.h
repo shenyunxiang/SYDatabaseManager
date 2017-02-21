@@ -40,6 +40,8 @@
 //
 @property(nonatomic, strong) NSArray        *childDevice;
 
+#pragma mark 虎符设备需要的信息
+
 @end
 
 @interface SmartChildDevice : NSObject

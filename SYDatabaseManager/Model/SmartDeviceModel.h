@@ -74,7 +74,6 @@
 @property(nonatomic, copy) NSString     *air_switch;
 @property(nonatomic, assign) NSInteger  air_mode;
 @property(nonatomic, assign) NSInteger  air_temperature;
-@property(nonatomic, copy) NSString     *test;
 
 
 @end

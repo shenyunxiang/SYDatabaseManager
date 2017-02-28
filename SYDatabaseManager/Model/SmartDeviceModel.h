@@ -59,6 +59,8 @@
 @interface SmartChildDevice : NSObject
 //父设备的Mac
 @property(nonatomic, copy) NSString     *parentMac;
+//来自于服务器的ID（在删除，修改设备时必要的参数）
+@property(nonatomic, assign) NSInteger    idFromServer;
 
 @property(nonatomic, copy) NSString     *deviceName;
 @property(nonatomic, copy) NSString     *deviceMac;
@@ -75,6 +77,15 @@
 
 #pragma mark - 遥控器的学习码
 @interface TelecontrolCode :NSObject
+//遥控器的ID
+@property(nonatomic, assign) NSInteger    parentId;
+//来自于服务器的ID（在删除，修改设备时必要的参数）
+@property(nonatomic, assign) NSInteger    idFromServer;
+
+@property(nonatomic, copy) NSString     *key;
+@property(nonatomic, copy) NSString     *learningCode;
+
+
 
 @end
 

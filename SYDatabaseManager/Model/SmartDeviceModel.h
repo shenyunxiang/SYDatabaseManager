@@ -71,7 +71,7 @@
 #pragma mark 空调设备需要的信息
 @property(nonatomic, copy) NSString     *air_url;
 @property(nonatomic, copy) NSString     *air_Key;
-
+@property(nonatomic, copy) NSString     *air_switch;
 @property(nonatomic, assign) NSInteger  air_mode;
 @property(nonatomic, assign) NSInteger  air_temperature;
 

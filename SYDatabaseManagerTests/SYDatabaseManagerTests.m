@@ -29,18 +29,15 @@
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
     
-    NSString *baseString = @"eyAiQ21kVHlwZSI6ICJHRVRfTEFOX05FVF9JTkZPIiwgIlNlcXVlbmNlSWQiOiAiNTA2NiIsICJTdGF0dXMiOiAiMCIgLCJJbmZvIjoitefE1DpQQzoyMGNmMzBkYjc2ZjY6MTkyLjE2OC4xLjg6MDoxOnVua25vd25AV2luZG93czc6d2luZG93czoxOTk1Ny+7+ralutA6UEM6MzhhMjhjMjk3Y2YxOjE5Mi4xNjguMS40OjE6MDp1bmtub3duQFdpbmRvd3M3OndpbmRvd3M6NTYzOCJ9";
-    
-    NSData *data = [[NSData alloc] initWithBase64EncodedString:baseString options:0];
-    NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
-    if (str == nil) {
-        str = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-    }
+    NSDictionary *dic = @{@"1":@""};
     
     
-    NSLog(@"%@", str);
+    NSMutableDictionary *mDic = [NSMutableDictionary dictionaryWithDictionary:dic];
     
+    
+    [mDic addEntriesFromDictionary:@{@"1":@"323"}];
+    
+    NSLog(@"%@", mDic);
 }
 
 - (void)testPerformanceExample {
